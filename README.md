@@ -1,36 +1,28 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Todo Frontend
 
-## Getting Started
+## Overview
+This repo contains a semi-finished state of the project you will be working on in this workshop. You will be creating a new Next.js project and then leveraging GitHub Copilot to build out the code changes.
 
-First, run the development server:
+## Pre-requisites
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+1. Create a new Next.js project ```yarn create next-app```
+2. Accept all the defaults (App Router, Tailwind CSS, Typescript etc)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Workshop steps
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1. Navigate here to retrieve the backend API URL: ```https://dummyjson.com/docs/todos```. You'll reference this page to see the JSON object structure also.
+2. Create a new typescript model for a ```Todo``` object. Use GitHub Copilot to generate this class using the sample JSON as a reference.
+3. Create a new typescript service for a ```TodoService``` object. Use GitHub Copilot to generate this class using axios for interacting with the JSON API provided. Import the Todo class/interface created earlier in this file.
+4. Have GitHub Copilot modify ```page.tsx``` to remove the default template contents.
+5. Generate a table based on the Todos retrieved from TodoService on page load. Make sure the table is rendered based on that data.
+6. Add a delete button to the table and implement a handler to call the correct method on the ```TodoService```.
+7. Restyle the page using GitHub Copilot. **Hint: Also look to restyle the tailwind defaults.**
+8. Create a form and handler for creating new Todos.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Extra for experts
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+8. Refactor the Todos table into its own component.
+9. Implement specific react hooks for the Todos.
+10. Implement caching.
+11. Implement loading indicator on data refreshes.
+12. Generate documentation.
